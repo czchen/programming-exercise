@@ -13,7 +13,7 @@ bool isValid(const char *s) {
 
     char *stack = (char *) malloc(strlen(s));
     int ptr = 0;
-    
+
     for (; *s; ++s) {
         switch (*s) {
             case '(':
@@ -40,9 +40,9 @@ bool isValid(const char *s) {
                 break;
         }
     }
-    
+
     free(stack);
-    
+
     if (ptr != 0) return false;
     return true;
 }
