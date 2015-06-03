@@ -42,6 +42,9 @@ int* twoSum(int* nums, int numsSize, int target) {
                 max = idx;
             } else {
                 int *ret = malloc(sizeof(*ret) * 2);
+                if (!ret) {
+                    return 0;
+                }
 
                 int x = array[i].index;
                 int y = array[idx].index;
