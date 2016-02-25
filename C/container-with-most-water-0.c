@@ -3,15 +3,30 @@ int min(int x, int y) {
     return x;
 }
 
-int maxArea(int* height, int heightSize) {
-    int maxArea = 0;
-    for (int i = 0; i < heightSize - 1; ++i) {
-        for (int j = i + 1; j < heightSize; ++j) {
-            int area = (j - i) * min(height[i], height[j]);
+int max(int x, int y) {
+    if (x > y) return x;
+    return y;
+}
 
-            if (area > maxArea) {
-                maxArea = area;
-            }
+int maxArea(int* height, int heightSize) {
+    int left = 0;
+    int right = heightSize - 1;
+
+    int maxArea = 0;
+
+    while (left < right) {
+        maxArea = max(maxArea, (right - left) * min(height[left], height[right]));
+
+        int diff = height[left] - height[right];
+        if (diff < 0) {
+            ++left;
+
+        } else if (diff > 0) {
+            --right;
+
+        } else {
+            ++left;
+            --right;
         }
     }
 
