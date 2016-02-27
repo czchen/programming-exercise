@@ -8,10 +8,8 @@ bool increasingTriplet(int* nums, int numsSize) {
     int smallest_seq_two = -1;
 
     for (int i = 1; i < numsSize; ++i) {
-        if (has_smallest_seq_two) {
-            if (smallest_seq_two < nums[i]) {
-                return true;
-            }
+        if (has_smallest_seq_two && smallest_seq_two < nums[i]) {
+            return true;
         }
 
         if (smallest_seq_one < nums[i]) {
