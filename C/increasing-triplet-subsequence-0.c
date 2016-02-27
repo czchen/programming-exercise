@@ -12,19 +12,13 @@ bool increasingTriplet(int* nums, int numsSize) {
             if (smallest_seq_two < nums[i]) {
                 return true;
             }
+        }
 
-            if (smallest_seq_one < nums[i]) {
-                smallest_seq_two = nums[i];
-            } else {
-                smallest_seq_one = nums[i];
-            }
+        if (smallest_seq_one < nums[i]) {
+            has_smallest_seq_two = true;
+            smallest_seq_two = nums[i];
         } else {
-            if (smallest_seq_one < nums[i]) {
-                has_smallest_seq_two = true;
-                smallest_seq_two = nums[i];
-            } else {
-                smallest_seq_one = nums[i];
-            }
+            smallest_seq_one = nums[i];
         }
     }
 
