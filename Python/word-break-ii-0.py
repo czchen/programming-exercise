@@ -3,6 +3,9 @@ class Solution(object):
         if s == '':
             return [[]]
 
+        if s in self._cache:
+            return self._cache[s]
+
         ret = []
 
         for word in wordDict:
@@ -16,6 +19,8 @@ class Solution(object):
                 l = list(map(merger, self.wordBreakInternal(s[len(word):], wordDict)))
                 ret.extend(l)
 
+        self._cache[s] = ret
+
         return ret
 
     def wordBreak(self, s, wordDict):
@@ -24,6 +29,8 @@ class Solution(object):
         :type wordDict: Set[str]
         :rtype: List[str]
         """
+
+        self._cache = {}
 
         ret = self.wordBreakInternal(s, wordDict)
 
