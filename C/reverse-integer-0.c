@@ -8,13 +8,13 @@ int reverse(int x) {
     int ans = 0;
 
     while (x) {
-        if (ans > INT_MAX / 10) {
+        if (ans > INT_MAX / 10) {  // overflow
             return 0;
         }
         ans *= 10;
 
         int add = x % 10;
-        if (INT_MAX - ans < add) {
+        if (INT_MAX - ans < add) {  // overflow
             return 0;
         }
         ans += add;

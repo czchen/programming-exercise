@@ -3,7 +3,7 @@ double myPow(double x, int n) {
         return 1;
     }
 
-    long long n1 = n;
+    long long n1 = n;  // overflow
     int is_negative = 0;
     if (n1 < 0) {
         n1 = -n1;

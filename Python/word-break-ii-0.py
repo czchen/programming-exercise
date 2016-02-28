@@ -3,7 +3,7 @@ class Solution(object):
         if s == '':
             return [[]]
 
-        if s in self._cache:
+        if s in self._cache:  # memorization
             return self._cache[s]
 
         ret = []
