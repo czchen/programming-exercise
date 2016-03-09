@@ -17,7 +17,7 @@ class Solution(object):
         if len(nums) == 0:
             return []
 
-        deque = []
+        deque = []  # array of (position, value)
         ans = []
 
         for i in range(0, k):
