@@ -14,7 +14,7 @@ int* countBits(int num, int* returnSize) {
         int count = 0;
 
         while (x) {
-            count += x % 2;
+            count += x & 1;
             x >>= 1;
         }
 
