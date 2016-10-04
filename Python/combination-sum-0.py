@@ -18,13 +18,13 @@ class Solution(object):
             for t in range(target + 1):
                 res = []
 
-                if t >= candidates[c] and table.get((t - candidates[c], c)) is not None:
+                if t >= candidates[c]:
                     for item in table[(t - candidates[c], c)]:
                         item = copy.deepcopy(item)
                         item.append(candidates[c])
                         res.append(item)
 
-                if c > 0 and table.get((t, c - 1)) is not None:
+                if c > 0:
                     res.extend(table[(t, c - 1)])
 
                 if (t, c) != (0, 0):
