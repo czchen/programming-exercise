@@ -30,7 +30,6 @@ class Solution(object):
                 if p[item[1]: item[1] + 1] == '.' or p[item[1]: item[1] + 1] == s[item[0]: item[0] + 1]:
                     add_to_stack((item[0] + 1, item[1]))
                     add_to_stack((item[0] + 1, item[1] + 2))
-                    add_to_stack((item[0] + 1, item[1]))
                 add_to_stack((item[0], item[1] + 2))
 
             elif p[item[1]: item[1] + 1] == '.' or s[item[0]: item[0] + 1] == p[item[1]: item[1] + 1]:
