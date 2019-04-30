@@ -18,7 +18,7 @@ Explanation: The answer is "b", with the length of 1.
 Example 3:
 ```
 
-````
+```
 Input: "pwwkew"
 Output: 3
 Explanation: The answer is "wke", with the length of 3.
