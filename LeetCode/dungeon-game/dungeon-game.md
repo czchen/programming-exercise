@@ -12,5 +12,5 @@ Write a function to determine the knight's minimum initial health so that he is 
 
 Notes:
 
-*   The knight's health has no upper bound.
-*   Any room can contain threats or power-ups, even the first room the knight enters and the bottom-right room where the princess is imprisoned.
+* The knight's health has no upper bound.
+* Any room can contain threats or power-ups, even the first room the knight enters and the bottom-right room where the princess is imprisoned.
