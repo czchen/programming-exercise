@@ -16,16 +16,16 @@ fn solution(mut nums: Vec<i32>) -> i32 {
     let mut size = 0;
     let mut previous = std::i32::MIN;
 
-    for num in nums.iter() {
-        if *num == previous + 1 {
+    for &num in nums.iter() {
+        if num == previous + 1 {
             size += 1
-        } else if *num == previous {
+        } else if num == previous {
         } else {
             ans = std::cmp::max(ans, size);
             size = 1;
         }
 
-        previous = *num;
+        previous = num;
     }
     ans = std::cmp::max(ans, size);
 

@@ -10,23 +10,23 @@ fn main() {
 }
 
 fn solution(nums: Vec<i32>) -> i32 {
-    let mut hash: std::collections::HashMap<i32, bool> = std::collections::HashMap::new();
+    let mut hash: std::collections::HashMap<_, _> = std::collections::HashMap::new();
 
-    for x in nums.iter() {
-        hash.insert(*x, true);
+    for &x in nums.iter() {
+        hash.insert(x, ());
     }
 
     let mut ans = 0;
 
-    for x in nums.iter() {
-        if !hash.contains_key(&(*x - 1)) {
-            let mut current = *x;
+    for &x in nums.iter() {
+        if !hash.contains_key(&(x - 1)) {
+            let mut current = x;
 
             while hash.contains_key(&current) {
                 current += 1;
             }
 
-            ans = std::cmp::max(ans, current - *x);
+            ans = std::cmp::max(ans, current - x);
         }
     }
 
