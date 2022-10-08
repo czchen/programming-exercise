@@ -1,9 +1,9 @@
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    let mut nums = Vec::new();
+    let mut nums: Vec<i32> = Vec::new();
 
     for i in 1..args.len() {
-        nums.push(args[i].parse::<i32>().unwrap());
+        nums.push(args[i].parse().unwrap());
     }
 
     println!("{0}", solution(nums));
