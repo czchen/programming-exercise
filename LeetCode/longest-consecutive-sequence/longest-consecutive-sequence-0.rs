@@ -27,7 +27,6 @@ fn solution(mut nums: Vec<i32>) -> i32 {
 
         previous = num;
     }
-    ans = std::cmp::max(ans, size);
 
-    return ans;
+    std::cmp::max(ans, size)
 }
