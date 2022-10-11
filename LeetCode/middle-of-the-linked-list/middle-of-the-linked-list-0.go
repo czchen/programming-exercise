@@ -29,12 +29,10 @@ func middleNode(head *ListNode) *ListNode {
 	current := head
 	middle := head
 
-	for current != nil {
-		current = current.Next
-		if current != nil {
-			current = current.Next
-			middle = middle.Next
-		}
+	for current != nil && current.Next != nil {
+		current = current.Next.Next
+		middle = middle.Next
 	}
+
 	return middle
 }
